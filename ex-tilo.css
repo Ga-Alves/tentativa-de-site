@@ -1,0 +1,202 @@
+*{
+    margin: 0px;
+    padding: 0px;
+        }
+body{
+    padding-bottom: 20px;
+    background-color:#d4f7f8;
+}
+    
+    /* menu*/
+    
+.menu{
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    flex-direction:row;
+}
+
+.menu > div{
+    flex-grow: 1;
+}
+
+.menu div a{
+    display: block;
+    text-decoration: none;
+    color:white;
+    background-color:rgb(0, 61, 141);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.menu div a:hover{
+    background-color:rgb(6, 86, 190);
+    color: honeydew;
+}
+
+.divDrop {
+    position: relative;
+}
+.drp{
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+.divDrop:hover div.drp{
+    display: block;
+}
+    /* titulo no meio da pagina*/
+
+#home{
+    margin: 20px;
+    padding: 10px;
+    font-size: 50px;
+    text-align: center;
+}
+
+
+    /* parte animada com foto*/
+#sobreMimTxt{
+    font-size: 2.5vw;
+    display: block;
+    width: 38vw;
+    position: absolute;
+    z-index: -1;
+}
+#sobreMim{
+    background-color:#d4f7f8 ;
+}
+#foto_inicial{
+    width: 10%;
+    border-radius: 30px;
+}
+.animacao:hover #sobreMim{
+    border-radius: 30px;
+    transform: translate(40vw, 0px);
+    transition-duration: 1000ms;
+}
+
+/* avaliação*/
+#ranking{
+    margin: 32px;
+}
+
+#avaliation{ /*nao remova, a tag com id='avaliation' é inserida com JavaScript*/
+    display: inline-flex;
+}
+
+#avaliation > a{
+    display: inline-block;
+    filter: opacity(50%);
+    text-decoration: none;
+}
+
+#avaliation > a:nth-child(1){order: 3;}
+#avaliation > a:nth-child(2){order: 2;}
+#avaliation > a:nth-child(3){order: 1;}
+
+#avaliation > a:hover, 
+#avaliation > a:hover ~ a{
+    filter: opacity(100%);
+}
+
+/*parte com quadrados azuis*/
+.container{
+    margin-top: 50px;
+    margin-left: 20px;
+    color: white;
+    display: grid;
+    grid-template-rows: 20vh 20vh 20vh 20vh;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-areas: 'az ve ve'
+                         'az am ver'
+                         'verde am verd'
+                         'verde azu azu';
+    grid-gap: 20px;
+    max-width:1000px;
+}
+.container > *{
+    border-radius: 20px;
+}
+
+.container div#um{
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    background-color: rgb(9, 115, 236);
+    grid-area: az;
+    overflow: hidden;
+}
+.container div#doi{
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 1fr;
+    background-color: rgb(37, 151, 218);
+    grid-area: ve;
+    overflow: hidden;
+}
+.container div#tre{
+    background-color: rgba(94, 219, 250, 0.993);
+    grid-area: am;
+}
+.container div#qua{
+    background-color:rgb(37, 151, 218);
+    grid-area: ver;
+    overflow: hidden;
+}
+.container div#cin{
+    background-color:rgb(37, 151, 218);
+    grid-area: verd;
+}
+.container div#sei{
+    background-color: rgb(37, 151, 218);
+    grid-area: verde;
+}
+.container div#set{
+    background-color:rgb(9, 115, 236);
+    grid-area: azu;
+}
+
+
+.container > div:hover{
+    transform: scale(1.05);
+    transition-duration: 300ms;
+}
+
+.container div#um h1{
+    justify-self: center;
+    grid-row-start: 1;
+    grid-row-end:2 ;
+   /* border: 1px solid black;*/
+    margin-top: 10px;
+}
+
+.container div#um p{
+    align-self: center;
+    grid-row-start: 2;
+    grid-row-end:3 ;
+   /* border: 1px solid black;*/
+    margin: 5px;
+    line-height: 1.5;
+    font-size: 120%;
+}
+
+.container div#doi h1{
+    display: block;
+    grid-row-start: 1;
+    grid-row-end:2 ;
+    text-align: center;
+    border-bottom: 1px solid  rgb(22, 117, 172);
+    margin-top: 10px;
+}
+
+.container div#doi div{
+   display: block;
+   grid-row-start: 2;
+   grid-row-end: 3;
+   align-self: center;
+   justify-self: center;
+   font-size: 300%;
+}
